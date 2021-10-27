@@ -1,25 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Home from './Containers/HomeContainer';
+import Header from './Containers/HeaderContainer';
+import {mobiledata} from "./data/mobileData";
+const App = ()=>{
+    return (
+      <>
+        <Header />
+       {mobiledata.map((data,index)=><Home brand={data.brand} model={data.model} price={data.price} path={data.image} key={index} />)};
+      </>
+    )
 }
-
 export default App;
